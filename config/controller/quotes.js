@@ -36,27 +36,6 @@ controller.getAll = async function(req, res) {
     }
 }
 
-controller.getOne = async function(req, res) {
-    try {
-        let findQoutes = await model.quotes.findAll({
-            where: {
-                qoute: req.params.qoute
-            }
-        });
-
-        if (findQoutes.length > 0) {
-            res.status(200).json({
-                message: 'Find method Qoutes',
-                data: findQoutes
-            });
-        }
-    } catch (error) {
-        res.status(404).json({
-            message: error
-        });
-    }
-}
-
 controller.getApi = async function(req, res) {
     try {
         const response = await axios.get(`https://api.kanye.rest`);
@@ -79,7 +58,7 @@ controller.getApi = async function(req, res) {
             favorites: 0
         });
         res.status(200).json({
-            message: 'successfully create qoute!!'
+            message: 'successfully create qoute from api!!'
         });
 
     } catch (error) {
@@ -117,7 +96,6 @@ controller.put = async function(req, res) {
             }
         });
         res.status(200).json({
-            data: updateQuote,
             message: 'successfully update qoute!'
         })
     } catch (error) {
