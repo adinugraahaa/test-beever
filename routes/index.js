@@ -1,9 +1,11 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
+const controler = require('../config/controller/index');
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+router.get('/api', controler.quotes.getApi);
+router.get('/', controler.quotes.getAll);
+router.post('/', controler.quotes.post);
+router.put('/:id', controler.quotes.put);
+router.delete('/:id', controler.quotes.delete);
 
 module.exports = router;

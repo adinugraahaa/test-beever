@@ -49,16 +49,16 @@ controller.getApi = async function(req, res) {
 
         if (findDuplicate.length > 0) {
             res.status(200).json({
-                message: 'qoute already exist'
+                message: 'quote already exist'
             });
         }
 
-        const newQoute = await model.quotes.create({
+        const newQuote = await model.quotes.create({
             quote: data.quote,
             favorites: 0
         });
         res.status(200).json({
-            message: 'successfully create qoute from api!!'
+            message: 'successfully create quote from api!!'
         });
 
     } catch (error) {
@@ -76,7 +76,7 @@ controller.post = async function(req, res) {
         });
         res.json({
             data: newQuote,
-            message: 'successfully create own qoute!'
+            message: 'successfully create own quote!'
         });
 
     } catch (error) {
@@ -96,7 +96,7 @@ controller.put = async function(req, res) {
             }
         });
         res.status(200).json({
-            message: 'successfully update qoute!'
+            message: 'successfully update quote!'
         })
     } catch (error) {
         res.status(404).json({
@@ -113,7 +113,7 @@ controller.delete = async function(req, res) {
             }
         });
         res.status(200).json({
-            message: 'successfully delete qoute!'
+            message: 'successfully delete quote!'
         })
     } catch (error) {
         res.status(404).json({
