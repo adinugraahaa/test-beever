@@ -4,4 +4,5 @@ const db = new Sequelize('test_beever', 'root', '', {
     host: 'localhost'
 });
 
+// menambah baris
 module.exports = db;
