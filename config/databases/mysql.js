@@ -5,3 +5,4 @@ const db = new Sequelize('test_beever', 'root', '', {
 });
 
 module.exports = db;
+// contoh menambah komen
