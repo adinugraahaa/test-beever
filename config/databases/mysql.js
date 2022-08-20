@@ -4,5 +4,6 @@ const db = new Sequelize('test_beever', 'root', '', {
     host: 'localhost'
 });
 
-module.exports = db;
 // contoh menambah komen
+module.exports = db;
+// menambah baris
